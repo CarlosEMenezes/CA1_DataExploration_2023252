@@ -30,6 +30,8 @@
 
 # Core data-wrangling and plotting toolkit (dplyr, tidyr, readr, ggplot2, purrr, stringr).
 library(tidyverse)
+# install.packages("devtools")
+devtools::install_github("r-lib/conflicted")
 # Missing-value summaries and plots.
 library(naniar)
 # Maps ISO country codes to World Bank regions.
@@ -44,3 +46,22 @@ library(GGally)
 library(fastDummies)
 # Non-overlapping text labels on scatter plots (installed with factoextra).
 library(ggrepel)
+
+
+# Fixed seed so any random step (e.g. jitter) gives the same result on every run.
+set.seed(2026)
+
+# Output folders for figures and cleaned data. showWarnings = FALSE stays silent if they already exist.
+dir.create("figures", showWarnings = FALSE)
+dir.create("data", showWarnings = FALSE)
+
+# One consistent look for every chart, so the poster reads as one piece.
+theme_set(theme_minimal(base_size = 12))
+
+# Helper that saves a ggplot at poster quality (300 dpi).
+# Wrapping ggsave() in a function keeps sizes and dpi identical across figures (DRY principle).
+save_figure <- function(plot_object, file_name, width_in = 8, height_in = 5) {
+  ggsave(filename = file.path("figures", file_name), plot = plot_object,
+         width = width_in, height = height_in, dpi = 300, bg = "white")
+}
+
