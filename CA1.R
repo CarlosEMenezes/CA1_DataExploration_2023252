@@ -65,3 +65,4 @@ save_figure <- function(plot_object, file_name, width_in = 8, height_in = 5) {
          width = width_in, height = height_in, dpi = 300, bg = "white")
 }
 
+
