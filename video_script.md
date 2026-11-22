@@ -1,9 +1,5 @@
 # CA1 video script (target 3:45, hard limit 4:00)
 
-Record with the poster full-screen (zoom into each column as you go), then switch to RStudio for the code part. Aim for about 140 words a minute.
-
----
-
 **[0:00-0:30] Intro: poster header + column 1 top**
 "Hi, I'm [name]. My project asks one question: do countries get cleaner electricity as they get richer? I used the Our World in Data energy dataset, which combines Ember, the Energy Institute and Maddison GDP data. I looked at 165 countries from 2000 to 2022."
 
