@@ -49,7 +49,6 @@ CA1/
 │   └── pca_scores.csv                  # Principal component scores (script output)
 ├── figures/                       # 16 charts used on the poster (script output)
 ├── CA1_Poster.pptx                # Poster, built on the module template
-├── video_script.md                # Script for the 4-minute video
 └── README.md
 ```
 
@@ -76,7 +75,7 @@ Most of the effort went here, because the raw file is messy in ways that are eas
 3. **GDP missing for whole countries.** 55 small territories have no GDP at all. They were dropped rather than imputed: with nothing to base an estimate on, imputation would mean inventing data. Because this depends on country size, it is *missing not at random* and is listed as a limitation.
 4. **Missing values that are really zeros.** When a source share (e.g. wind) is missing, the shares that *are* present already add up to 100% in every case (243 rows). So a missing value means "this country has no plant of that type", and the true value is 0. The script tests this before filling anything in. Mean imputation would have pushed the totals above 100%.
 5. **Leading gaps.** Serbia and Montenegro report separately only after their 2006 split. Filling those early years would be extrapolation, not interpolation, so those 7 rows were dropped.
-6. **Outliers.** Tukey's IQR rule flags 259 energy-per-person values on the raw scale and **none** on a log10 scale. The "outliers" (Iceland, Qatar, Norway…) are genuine energy systems produced by a heavily skewed variable, so they were kept, and log10 transforms were used for the skewed variables.
+6. **Outliers.** Turkey's IQR rule flags 259 energy-per-person values on the raw scale and **none** on a log10 scale. The "outliers" (Iceland, Qatar, Norway…) are genuine energy systems produced by a heavily skewed variable, so they were kept, and log10 transforms were used for the skewed variables.
 
 ### 2. Exploratory data analysis
 
